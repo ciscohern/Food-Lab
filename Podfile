@@ -11,7 +11,9 @@ target 'FoodLab' do
 	pod 'Alamofire'
 	pod 'SwiftyJSON'
 	pod 'SwiftKeychainWrapper'
-	
+	pod 'FBSDKLoginKit'
+	pod 'FacebookCore'
+	pod 'FacebookLogin'
   target 'FoodLabTests' do
     inherit! :search_paths
     # Pods for testing
