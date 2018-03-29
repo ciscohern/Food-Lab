@@ -13,92 +13,54 @@ import SwiftyJSON
 import SwiftKeychainWrapper
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Firebase
+import FirebaseAuth
+import FBSDKLoginKit
+import FacebookLogin
 
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate{
+class ViewController: UIViewController, LoginButtonDelegate{
     
-    let loginButton: FBSDKLoginButton = {
-        let button = FBSDKLoginButton()
-        button.readPermissions = ["email"]
-        return button
-    }()
-    
+    var fbLoginSuccess = false;
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //APITest()
+        let loginButton = LoginButton(readPermissions: [ .publicProfile])
+        loginButton.delegate = self
+        loginButton.center = view.center
         
         view.addSubview(loginButton)
-        loginButton.center = view.center
-        loginButton.delegate = self
-        
-        if let token = FBSDKAccessToken.current(){
-            fetchProfile()
-        }
+
     }
     
-    func fetchProfile(){
-        print ("fetch profile")
-        FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "email, first_name, last_name, id, gender, picture.type(large)"])
-            .start(completionHandler: {
-                (connection, result, error) in
-                guard
-                    let result = result as? NSDictionary,
-                    let email = result["email"] as? String,
-                    let user_name = result["first_name"] as? String,
-                    let user_gender = result["gender"] as? String,
-                    let user_id_fb = result["id"] as? String,
-                    let picture = result["picture"] as? NSDictionary, let data = picture ["data"] as? NSDictionary,
-                    let url = data["url"] as? String
-                    else {
-                        return };
-                print(email);
-                print (url);
-                
-            })
-        
+    override func viewDidAppear(_ animated: Bool) {
+
+
     }
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        print("Login Complete")
-        fetchProfile()
-    }
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("Logout Complete")
-    }
-    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
-        return true;
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    func APITest(){
-        let retrievedString: String? = KeychainWrapper.standard.string(forKey: "foodApi")
-        
-        let headers: HTTPHeaders = [
-            "X-Mashape-Key": retrievedString!,
-            "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
-            "accept": "application/json"
-        ]
-        
-        Alamofire.request("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2Cflour%2Csugar&limitLicense=false&number=5&ranking=", headers: headers).responseJSON { response in
-            debugPrint(response)
-            
-            
-            switch response.result{
-            case .success(let value):
-                let json = JSON(value)
-                print (json)
-            case .failure(let error):
-                print(error)
-            }
-        }
 
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        print("user logged out")
     }
+    
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        print("login success")
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
+        self.present(vc, animated: true, completion: nil)
+        
+        
+    }
+
+    
+    
+
+
     
 }
 
