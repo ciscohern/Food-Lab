@@ -16,7 +16,8 @@ target 'FoodLab' do
 	pod 'FacebookLogin'
 	pod 'Firebase/Auth'
 	pod 'FBSDKCoreKit'
-	pod 'GoogleSignIn'
+	pod 'Google/SignIn'
+	pod 'GoogleAnalytics'
   target 'FoodLabTests' do
     inherit! :search_paths
     # Pods for testing

@@ -18,9 +18,9 @@
 		AA68FBED2058BEC400034F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA68FBEB2058BEC400034F30 /* LaunchScreen.storyboard */; };
 		AA68FBF82058BEC400034F30 /* FoodLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68FBF72058BEC400034F30 /* FoodLabTests.swift */; };
 		AA68FC032058BEC400034F30 /* FoodLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68FC022058BEC400034F30 /* FoodLabUITests.swift */; };
-		AA68FC112058BEFB00034F30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA68FC102058BEFB00034F30 /* GoogleService-Info.plist */; };
 		AAB716A92059E713000F2ACF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB716AA2059E713000F2ACF /* SwiftyJSON.framework */; };
 		AAC62A61206B2E37000FCB82 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC62A60206B2E37000FCB82 /* SecondViewController.swift */; };
+		AAD1E306206DB04B001C64E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAD1E305206DB04B001C64E1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +61,9 @@
 		AA68FBFE2058BEC400034F30 /* FoodLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA68FC022058BEC400034F30 /* FoodLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLabUITests.swift; sourceTree = "<group>"; };
 		AA68FC042058BEC400034F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA68FC102058BEFB00034F30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAB716AA2059E713000F2ACF /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC62A60206B2E37000FCB82 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		AAD1E305206DB04B001C64E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAD9993920648EFA0089CB73 /* FoodLab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodLab-Bridging-Header.h"; sourceTree = "<group>"; };
 		B8E281E6A3D20F78B1AFB2D6 /* Pods-FoodLabUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLabUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLabUITests/Pods-FoodLabUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C49A4F9299977F81AEEA74DE /* Pods-FoodLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLab.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLab/Pods-FoodLab.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		AA68FBE12058BEC400034F30 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
-				AA68FC102058BEFB00034F30 /* GoogleService-Info.plist */,
+				AAD1E305206DB04B001C64E1 /* GoogleService-Info.plist */,
 				AA68FBE22058BEC400034F30 /* AppDelegate.swift */,
 				AA68FBE42058BEC400034F30 /* ViewController.swift */,
 				AAC62A60206B2E37000FCB82 /* SecondViewController.swift */,
@@ -301,7 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA68FBED2058BEC400034F30 /* LaunchScreen.storyboard in Resources */,
-				AA68FC112058BEFB00034F30 /* GoogleService-Info.plist in Resources */,
+				AAD1E306206DB04B001C64E1 /* GoogleService-Info.plist in Resources */,
 				AA68FBEA2058BEC400034F30 /* Assets.xcassets in Resources */,
 				AA68FBE82058BEC400034F30 /* Main.storyboard in Resources */,
 			);
@@ -373,7 +373,6 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
@@ -389,7 +388,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
@@ -493,10 +491,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoodLab/Pods-FoodLab-resources.sh",
+				"${PODS_ROOT}/GoogleAuthUtilities/Frameworks/frameworks/GoogleAuthUtilities.framework/Resources/GTMOAuth2ViewTouch.xib",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GTMOAuth2ViewTouch.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

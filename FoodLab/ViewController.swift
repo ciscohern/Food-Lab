@@ -19,7 +19,7 @@ import FBSDKLoginKit
 import FacebookLogin
 
 
-class ViewController: UIViewController, LoginButtonDelegate{
+class ViewController: UIViewController, LoginButtonDelegate , GIDSignInUIDelegate{
     
     var fbLoginSuccess = false;
 
@@ -28,8 +28,10 @@ class ViewController: UIViewController, LoginButtonDelegate{
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
         loginButton.center = view.center
-        
+        loginButton.frame = CGRect(x:100,y:650,width:200,height:28)
         view.addSubview(loginButton)
+
+
 
     }
     
@@ -56,11 +58,7 @@ class ViewController: UIViewController, LoginButtonDelegate{
         
         
     }
-
     
-    
-
-
-    
+   
 }
 
