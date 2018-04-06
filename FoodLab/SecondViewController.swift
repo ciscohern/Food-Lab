@@ -15,11 +15,11 @@ import FBSDKLoginKit
 import FacebookLogin
 
 class SecondViewController: UIViewController, LoginButtonDelegate {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //Call to the FoodAPI (Currently Causing an error)
-        //APITest()
+        
         //Display the FaceBook Login Buttons
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
@@ -46,19 +46,35 @@ class SecondViewController: UIViewController, LoginButtonDelegate {
         print("login success")
 
     }
+    
+    @IBOutlet weak var ingredientText: UITextField!
+    var ingredients : String = ""
+    var ingred: String = ""
+    @IBAction func ingredientButton(_ sender: UIButton) {
+      
+        ingredients = ingredientText.text!
+        let splitIngredients = ingredients.components(separatedBy: ",")
+        let joined = splitIngredients.joined(separator: ",")
+        ingred = joined.components(separatedBy: .whitespaces).joined()
+        APITest()
+        
+    }
+ 
     //Food API JSON
     func APITest(){
-        let retrievedString: String? = KeychainWrapper.standard.string(forKey: "foodApi")
+        let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
+        
+        let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=\(ingred)"
         
         let headers: HTTPHeaders = [
+            "X-Mashape-Body":"&limitLicense=false&number=5&ranking=",
             "X-Mashape-Key": retrievedString!,
             "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
-            "accept": "application/json"
+            "accept": "application/json",
         ]
         
-        Alamofire.request("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2Cflour%2Csugar&limitLicense=false&number=5&ranking=", headers: headers).responseJSON { response in
+        Alamofire.request(URL, headers: headers).responseJSON { response in
             debugPrint(response)
-            
             
             switch response.result{
             case .success(let value):

@@ -30,8 +30,9 @@ class ViewController: UIViewController, LoginButtonDelegate , GIDSignInUIDelegat
         loginButton.center = view.center
         loginButton.frame = CGRect(x:100,y:650,width:200,height:28)
         view.addSubview(loginButton)
+       
 
-
+        
 
     }
     
