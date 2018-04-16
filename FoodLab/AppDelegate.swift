@@ -27,13 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
 
-        return true
+        //return true
 
 
             
-            return true
+            //return true
     }
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject)-> Bool{
+    func application(application: UIApplication, openURL url: URL, sourceApplication: String?, annotation: Any)-> Bool{
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url as URL!, sourceApplication: sourceApplication, annotation: annotation)
 
     }

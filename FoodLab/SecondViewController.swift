@@ -27,7 +27,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate {
         view.addSubview(loginButton)
         // Do any additional setup after loading the view.
         
-        
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +60,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate {
         
     }
  
+    
     //Food API JSON
     func APITest(){
         let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
