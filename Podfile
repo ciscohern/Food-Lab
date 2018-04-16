@@ -8,6 +8,7 @@ target 'FoodLab' do
   # Pods for FoodLab
 	
 	pod 'Alamofire'
+    pod 'AlamofireImage'
 	pod 'SwiftyJSON'
 	pod 'SwiftKeychainWrapper'
 	pod 'FBSDKLoginKit'

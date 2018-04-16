@@ -21,6 +21,7 @@
 		AAB716A92059E713000F2ACF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB716AA2059E713000F2ACF /* SwiftyJSON.framework */; };
 		AAC62A61206B2E37000FCB82 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC62A60206B2E37000FCB82 /* SecondViewController.swift */; };
 		D85BFF63208401D5002494D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85BFF62208401D5002494D6 /* GoogleService-Info.plist */; };
+		D85BFF6520842705002494D6 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85BFF6420842705002494D6 /* RecipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		B8E281E6A3D20F78B1AFB2D6 /* Pods-FoodLabUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLabUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLabUITests/Pods-FoodLabUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C49A4F9299977F81AEEA74DE /* Pods-FoodLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLab.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLab/Pods-FoodLab.release.xcconfig"; sourceTree = "<group>"; };
 		D85BFF62208401D5002494D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D85BFF6420842705002494D6 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		E299A82D54E89549890E116A /* Pods_FoodLabTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodLabTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBDF7755EC5C3F630CDBB9E /* Pods-FoodLabUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLabUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLabUITests/Pods-FoodLabUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,15 +154,16 @@
 		AA68FBE12058BEC400034F30 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
+				AA68FBE62058BEC400034F30 /* Main.storyboard */,
 				D85BFF62208401D5002494D6 /* GoogleService-Info.plist */,
 				AA68FBE22058BEC400034F30 /* AppDelegate.swift */,
 				AA68FBE42058BEC400034F30 /* ViewController.swift */,
 				AAC62A60206B2E37000FCB82 /* SecondViewController.swift */,
-				AA68FBE62058BEC400034F30 /* Main.storyboard */,
 				AA68FBE92058BEC400034F30 /* Assets.xcassets */,
 				AA68FBEB2058BEC400034F30 /* LaunchScreen.storyboard */,
 				AA68FBEE2058BEC400034F30 /* Info.plist */,
 				AAD9993920648EFA0089CB73 /* FoodLab-Bridging-Header.h */,
+				D85BFF6420842705002494D6 /* RecipeCell.swift */,
 			);
 			path = FoodLab;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoodLab/Pods-FoodLab-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -382,6 +386,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -512,6 +517,7 @@
 				AAC62A61206B2E37000FCB82 /* SecondViewController.swift in Sources */,
 				AA68FBE52058BEC400034F30 /* ViewController.swift in Sources */,
 				AA68FBE32058BEC400034F30 /* AppDelegate.swift in Sources */,
+				D85BFF6520842705002494D6 /* RecipeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
