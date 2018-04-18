@@ -91,6 +91,7 @@
                                         <connections>
                                             <outlet property="recipeTitle" destination="Yc8-QM-Js8" id="GTG-6O-tu9"/>
                                             <outlet property="recipieImageView" destination="K7S-w9-lKL" id="DEh-yx-dQR"/>
+                                            <segue destination="F6b-rc-W9T" kind="show" id="7lS-BW-LcL"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -126,13 +127,37 @@
                     <view key="view" contentMode="scaleToFill" id="JOb-c1-tCY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test!" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7m9-S9-sFe">
+                                <rect key="frame" x="121" y="205" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STn-Zb-9Tb">
+                                <rect key="frame" x="152" y="550" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="F6b-rc-W9T" eventType="touchUpInside" id="xMf-vc-H6c"/>
+                                    <segue destination="2fr-6U-pNe" kind="show" identifier="detailReturnMain" id="ig3-gc-a9s"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="K4F-zD-ZJ2"/>
                     </view>
+                    <connections>
+                        <outlet property="backbutton" destination="STn-Zb-9Tb" id="WwF-rj-HL7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSA-TU-Mnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1841" y="116"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ig3-gc-a9s"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -9,7 +9,8 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var backbutton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +22,11 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didTapBackButton(_ sender: Any) {
+        performSegue(withIdentifier: "detailReturnMain", sender: (Any).self)
 
+    }
+    
     /*
     // MARK: - Navigation
 
