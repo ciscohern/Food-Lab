@@ -15,7 +15,7 @@ import SwiftKeychainWrapper
 import FBSDKLoginKit
 import FacebookLogin
 
-
+//structure to decode recipe JSON
 struct Recipe: Decodable {
     let id : Int
     let image: String
@@ -34,24 +34,20 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         collectionView.dataSource = self
-
-        //Call to the FoodAPI (Currently Causing an error)
         
         //Display the FaceBook Login Buttons
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
         loginButton.frame = CGRect(x:100,y:650,width:200,height:28)
         view.addSubview(loginButton)
-        // Do any additional setup after loading the view.
         
+        //initial call to preload collectionview
         ingred = "apples"
         APITest {
+            self.set = true //necessary to avoid out of index error
             self.collectionView.reloadData()
         }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,7 +80,6 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
             self.set = true
             self.collectionView.reloadData()
         }
-        
     }
     
     
@@ -92,63 +87,47 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
     func APITest(callback: @escaping (() -> Void)) {
         
         let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
-        
         let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=\(ingred)"
         let headers: HTTPHeaders = [
-            "X-Mashape-Body":"&limitLicense=false&number=5&ranking=",
+            "X-Mashape-Body":"&limitLicense=false&number=2&ranking=",
             "X-Mashape-Key": retrievedString!,
             "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
             "accept": "application/json",
             ]
-DispatchQueue.global(qos: .userInitiated).async {
-        Alamofire.request(URL, headers: headers).responseJSON {(response) in
-
-            //debugPrint(response)
-            let result = response.data
-            //debugPrint(result)
-            do{
-                self.recipies = try JSONDecoder().decode([Recipe].self, from: result!)
-                for recipe in self.recipies{
-                    print(recipe.title, " : ", recipe.id)
+        
+        //bounces call to background
+        DispatchQueue.global(qos: .userInitiated).async {
+            Alamofire.request(URL, headers: headers).responseJSON {(response) in
+                //debugPrint(response)
+                let result = response.data
+                do{
+                    self.recipies = try JSONDecoder().decode([Recipe].self, from: result!)
+                    return 	callback()
+                }catch{
+                    print("error")
                 }
-                return 	callback()
-            }catch{
-                print("error")
+            }
+            //brings it back, refreshes UI
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
         }
-     DispatchQueue.main.async {
-    self.collectionView.reloadData()
-    }}}
-    
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCell", for: indexPath) as? RecipeCell
-        
-//        let dictionary = recipies[indexPath.row] as [String:Any]
-//        if let imagePath = dictionary["image"] as? String {
-            //cell!.recipieImageView = imagePath
-        
+       
         if(self.set == true){
             let imageURL = URL(string: recipies[indexPath.row].image)
             cell?.recipieImageView.af_setImage(withURL: imageURL!)
             cell?.recipeTitle.text = recipies[indexPath.row].title
-            
         }
-        
-        //cell?.recipeTitle.text = self.recipies[indexPath.row].title
-        for recipe in self.recipies{
-            //let imageURL = URL(string: recipe.image)!
-            //cell?.recipieImageView.af_setImage(withURL: imageURL)
-            //print(imageURL)
-            print(recipe.title)
-        }
-        
+
         cell?.backgroundColor = UIColor.cyan
         return cell!
     }
-    
 }
