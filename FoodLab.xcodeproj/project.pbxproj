@@ -22,6 +22,7 @@
 		AAC62A61206B2E37000FCB82 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC62A60206B2E37000FCB82 /* SecondViewController.swift */; };
 		D85BFF63208401D5002494D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85BFF62208401D5002494D6 /* GoogleService-Info.plist */; };
 		D85BFF6520842705002494D6 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85BFF6420842705002494D6 /* RecipeCell.swift */; };
+		D88313E220870A99007B3783 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88313E120870A99007B3783 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C49A4F9299977F81AEEA74DE /* Pods-FoodLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLab.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLab/Pods-FoodLab.release.xcconfig"; sourceTree = "<group>"; };
 		D85BFF62208401D5002494D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D85BFF6420842705002494D6 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		D88313E120870A99007B3783 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E299A82D54E89549890E116A /* Pods_FoodLabTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodLabTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBDF7755EC5C3F630CDBB9E /* Pods-FoodLabUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLabUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLabUITests/Pods-FoodLabUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				AA68FBE62058BEC400034F30 /* Main.storyboard */,
+				D88313E120870A99007B3783 /* DetailViewController.swift */,
 				D85BFF62208401D5002494D6 /* GoogleService-Info.plist */,
 				AA68FBE22058BEC400034F30 /* AppDelegate.swift */,
 				AA68FBE42058BEC400034F30 /* ViewController.swift */,
@@ -516,6 +519,7 @@
 			files = (
 				AAC62A61206B2E37000FCB82 /* SecondViewController.swift in Sources */,
 				AA68FBE52058BEC400034F30 /* ViewController.swift in Sources */,
+				D88313E220870A99007B3783 /* DetailViewController.swift in Sources */,
 				AA68FBE32058BEC400034F30 /* AppDelegate.swift in Sources */,
 				D85BFF6520842705002494D6 /* RecipeCell.swift in Sources */,
 			);
