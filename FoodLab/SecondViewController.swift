@@ -34,6 +34,9 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        collectionView.dataSource = self
+
         //Call to the FoodAPI (Currently Causing an error)
         
         //Display the FaceBook Login Buttons
@@ -43,7 +46,12 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         view.addSubview(loginButton)
         // Do any additional setup after loading the view.
         
-        collectionView.dataSource = self
+        ingred = "apples"
+        APITest {
+            self.collectionView.reloadData()
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,14 +80,17 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         let splitIngredients = ingredients.components(separatedBy: ",")
         let joined = splitIngredients.joined(separator: ",")
         ingred = joined.components(separatedBy: .whitespaces).joined()
-        APITest()
-        //self.set = true
-        collectionView.reloadData()
+        APITest {
+            self.set = true
+            self.collectionView.reloadData()
+        }
+        
     }
     
     
     //Food API JSON
-    func APITest(){
+    func APITest(callback: @escaping (() -> Void)) {
+        
         let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
         
         let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=\(ingred)"
@@ -89,24 +100,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
             "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
             "accept": "application/json",
             ]
-        
-//                Alamofire.request(URL, headers: headers).responseJSON { response in
-//                    //debugPrint(response)
-//
-//                    switch response.result{
-//                    case .success(let value):
-//                        let json = JSON(value)
-//                        print (json)
-//                        self.recipies = try JSONDecoder().decode([Recipe].self, from: json)
-//                        for recipe in self.recipies{
-//                            print(recipe.title)
-//                        }
-//                    case .failure(let error):
-//                        print(error)
-//                    }
-//                }
-        
-
+DispatchQueue.global(qos: .userInitiated).async {
         Alamofire.request(URL, headers: headers).responseJSON {(response) in
 
             //debugPrint(response)
@@ -117,12 +111,14 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
                 for recipe in self.recipies{
                     print(recipe.title, " : ", recipe.id)
                 }
+                return 	callback()
             }catch{
                 print("error")
             }
         }
-        //collectionView.reloadData()
-    }
+     DispatchQueue.main.async {
+    self.collectionView.reloadData()
+    }}}
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -137,15 +133,19 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
             //cell!.recipieImageView = imagePath
         
         if(self.set == true){
-//        let imageURL = URL(string: recipies[indexPath.row].image)
-//        cell?.recipieImageView.af_setImage(withURL: imageURL!)
+            let imageURL = URL(string: recipies[indexPath.row].image)
+            cell?.recipieImageView.af_setImage(withURL: imageURL!)
             cell?.recipeTitle.text = recipies[indexPath.row].title
+            
         }
-//        for recipe in self.recipies{
-//            let imageURL = URL(string: recipe.image)!
-//            cell?.recipieImageView.af_setImage(withURL: imageURL)
-//            print(imageURL)
-//        }
+        
+        //cell?.recipeTitle.text = self.recipies[indexPath.row].title
+        for recipe in self.recipies{
+            //let imageURL = URL(string: recipe.image)!
+            //cell?.recipieImageView.af_setImage(withURL: imageURL)
+            //print(imageURL)
+            print(recipe.title)
+        }
         
         cell?.backgroundColor = UIColor.cyan
         return cell!
