@@ -18,6 +18,7 @@
 		AA68FBED2058BEC400034F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA68FBEB2058BEC400034F30 /* LaunchScreen.storyboard */; };
 		AA68FBF82058BEC400034F30 /* FoodLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68FBF72058BEC400034F30 /* FoodLabTests.swift */; };
 		AA68FC032058BEC400034F30 /* FoodLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68FC022058BEC400034F30 /* FoodLabUITests.swift */; };
+		AA8F3FC420858EE8006AF0C1 /* FoodLabHome.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8F3FC320858EE8006AF0C1 /* FoodLabHome.png */; };
 		AAB716A92059E713000F2ACF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB716AA2059E713000F2ACF /* SwiftyJSON.framework */; };
 		AAC62A61206B2E37000FCB82 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC62A60206B2E37000FCB82 /* SecondViewController.swift */; };
 		AAD1E306206DB04B001C64E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAD1E305206DB04B001C64E1 /* GoogleService-Info.plist */; };
@@ -61,6 +62,7 @@
 		AA68FBFE2058BEC400034F30 /* FoodLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA68FC022058BEC400034F30 /* FoodLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLabUITests.swift; sourceTree = "<group>"; };
 		AA68FC042058BEC400034F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA8F3FC320858EE8006AF0C1 /* FoodLabHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FoodLabHome.png; path = ../../../Downloads/FoodLabHome.png; sourceTree = "<group>"; };
 		AAB716AA2059E713000F2ACF /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC62A60206B2E37000FCB82 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		AAD1E305206DB04B001C64E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				AA68FBEB2058BEC400034F30 /* LaunchScreen.storyboard */,
 				AA68FBEE2058BEC400034F30 /* Info.plist */,
 				AAD9993920648EFA0089CB73 /* FoodLab-Bridging-Header.h */,
+				AA8F3FC320858EE8006AF0C1 /* FoodLabHome.png */,
 			);
 			path = FoodLab;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8F3FC420858EE8006AF0C1 /* FoodLabHome.png in Resources */,
 				AA68FBED2058BEC400034F30 /* LaunchScreen.storyboard in Resources */,
 				AAD1E306206DB04B001C64E1 /* GoogleService-Info.plist in Resources */,
 				AA68FBEA2058BEC400034F30 /* Assets.xcassets in Resources */,

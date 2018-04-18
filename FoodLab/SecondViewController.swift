@@ -18,8 +18,6 @@ class SecondViewController: UIViewController, LoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Call to the FoodAPI (Currently Causing an error)
-        
         //Display the FaceBook Login Buttons
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
@@ -56,23 +54,19 @@ class SecondViewController: UIViewController, LoginButtonDelegate {
         let splitIngredients = ingredients.components(separatedBy: ",")
         let joined = splitIngredients.joined(separator: ",")
         ingred = joined.components(separatedBy: .whitespaces).joined()
-        APITest()
+        IngredientSearch()
         
     }
- 
-    //Food API JSON
-    func APITest(){
+    
+    func RecipeInfo(){
         let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
+         let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/\(570476)"
         
-        let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=\(ingred)"
-        
-        let headers: HTTPHeaders = [
-            "X-Mashape-Body":"&limitLicense=false&number=5&ranking=",
-            "X-Mashape-Key": retrievedString!,
-            "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
+        let headers: HTTPHeaders=[
+            "X-Mashape-Body":"/information?includeNutrition=false",
+            "X-Mashape-Key":retrievedString!,
             "accept": "application/json",
         ]
-        
         Alamofire.request(URL, headers: headers).responseJSON { response in
             debugPrint(response)
             
@@ -84,9 +78,44 @@ class SecondViewController: UIViewController, LoginButtonDelegate {
                 print(error)
             }
         }
-        
     }
     
+    
+    
+    //Food API JSON
+    func IngredientSearch(){
+        let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
+        
+        let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=\(ingred)"
+        
+        let headers: HTTPHeaders = [
+            "X-Mashape-Body":"&limitLicense=false&number=6&ranking=",
+            "X-Mashape-Key": retrievedString!,
+            "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
+            "accept": "application/json",
+        ]
+        
+        Alamofire.request(URL, headers: headers).responseJSON { response in
+            debugPrint(response)
+            print("------------------------------------------------")
+            switch response.result{
+            case .success(let value):
+                let json = JSON(value)
+                
+                var titleString = [String]()
+                for i in 0...4{
+                    let title:JSON = json[i]["title"]
+                    titleString.append(title.rawString([:])!)
+                }
+                print(titleString)
+             
 
+               // print (json)
+            case .failure(let error):
+                print(error)
+            }
 
+        }
+    }
+    
 }
