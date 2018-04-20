@@ -48,6 +48,10 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
             self.set = true //necessary to avoid out of index error
             self.collectionView.reloadData()
         }
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -112,6 +116,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
                 self.collectionView.reloadData()
             }
         }
+        //collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -123,11 +128,14 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
        
         if(self.set == true){
             let imageURL = URL(string: recipies[indexPath.row].image)
-            cell?.recipieImageView.af_setImage(withURL: imageURL!)
             cell?.recipeTitle.text = recipies[indexPath.row].title
+            DispatchQueue.main.async {
+                cell?.recipieImageView.af_setImage(withURL: imageURL!)
+            }
+           
         }
-
-        cell?.backgroundColor = UIColor.cyan
+        
+        //cell?.backgroundColor = UIColor.cyan
         return cell!
     }
 }

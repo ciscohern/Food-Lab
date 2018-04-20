@@ -47,7 +47,7 @@
                                     <action selector="ingredientButton:" destination="2fr-6U-pNe" eventType="touchDragInside" id="sUA-E9-c5f"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Type a comma-separated list of ingredients" adjustsFontForContentSizeCategory="YES" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="t8t-cC-KuJ">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Type a comma-separated list of ingredients" adjustsFontForContentSizeCategory="YES" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="t8t-cC-KuJ">
                                 <rect key="frame" x="27" y="567" width="287" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <nil key="textColor"/>
@@ -158,6 +158,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="7lS-BW-LcL"/>
         <segue reference="ig3-gc-a9s"/>
     </inferredMetricsTieBreakers>
 </document>
