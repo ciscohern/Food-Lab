@@ -1,11 +1,9 @@
-//
 //  ViewController.swift
 //  FoodLab
 //
 //  Created by Francisco Hernanedez on 3/13/18.
 //  Copyright © 2018 Francisco Hernanedez. All rights reserved.
 //
-
 import UIKit
 import Foundation
 import Alamofire
@@ -22,7 +20,7 @@ import FacebookLogin
 class ViewController: UIViewController, LoginButtonDelegate , GIDSignInUIDelegate{
     
     var fbLoginSuccess = false;
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +30,6 @@ class ViewController: UIViewController, LoginButtonDelegate , GIDSignInUIDelegat
         loginButton.frame = CGRect(x:100,y:650,width:200,height:28)
         view.addSubview(loginButton)
         
-
         
     }
     
@@ -47,14 +44,14 @@ class ViewController: UIViewController, LoginButtonDelegate , GIDSignInUIDelegat
     
     
     override func viewDidAppear(_ animated: Bool) {
-
-
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print("user logged out")
@@ -70,6 +67,5 @@ class ViewController: UIViewController, LoginButtonDelegate , GIDSignInUIDelegat
         
     }
     
-   
+    
 }
-

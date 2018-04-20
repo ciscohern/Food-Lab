@@ -6,9 +6,9 @@ target 'FoodLab' do
   use_frameworks!
 
   # Pods for FoodLab
-	pod 'Firebase/Core'
-	pod 'Firebase/Database'
+	
 	pod 'Alamofire'
+    pod 'AlamofireImage'
 	pod 'SwiftyJSON'
 	pod 'SwiftKeychainWrapper'
 	pod 'FBSDKLoginKit'

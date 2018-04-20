@@ -21,7 +21,9 @@
 		AA8F3FC420858EE8006AF0C1 /* FoodLabHome.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8F3FC320858EE8006AF0C1 /* FoodLabHome.png */; };
 		AAB716A92059E713000F2ACF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB716AA2059E713000F2ACF /* SwiftyJSON.framework */; };
 		AAC62A61206B2E37000FCB82 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC62A60206B2E37000FCB82 /* SecondViewController.swift */; };
-		AAD1E306206DB04B001C64E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAD1E305206DB04B001C64E1 /* GoogleService-Info.plist */; };
+		D85BFF63208401D5002494D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D85BFF62208401D5002494D6 /* GoogleService-Info.plist */; };
+		D85BFF6520842705002494D6 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85BFF6420842705002494D6 /* RecipeCell.swift */; };
+		D88313E220870A99007B3783 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88313E120870A99007B3783 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +67,12 @@
 		AA8F3FC320858EE8006AF0C1 /* FoodLabHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FoodLabHome.png; path = ../../../Downloads/FoodLabHome.png; sourceTree = "<group>"; };
 		AAB716AA2059E713000F2ACF /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC62A60206B2E37000FCB82 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		AAD1E305206DB04B001C64E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAD9993920648EFA0089CB73 /* FoodLab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodLab-Bridging-Header.h"; sourceTree = "<group>"; };
 		B8E281E6A3D20F78B1AFB2D6 /* Pods-FoodLabUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLabUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLabUITests/Pods-FoodLabUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C49A4F9299977F81AEEA74DE /* Pods-FoodLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLab.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLab/Pods-FoodLab.release.xcconfig"; sourceTree = "<group>"; };
+		D85BFF62208401D5002494D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D85BFF6420842705002494D6 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		D88313E120870A99007B3783 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E299A82D54E89549890E116A /* Pods_FoodLabTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodLabTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBDF7755EC5C3F630CDBB9E /* Pods-FoodLabUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLabUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLabUITests/Pods-FoodLabUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,15 +158,17 @@
 		AA68FBE12058BEC400034F30 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
-				AAD1E305206DB04B001C64E1 /* GoogleService-Info.plist */,
+				AA68FBE62058BEC400034F30 /* Main.storyboard */,
+				D88313E120870A99007B3783 /* DetailViewController.swift */,
+				D85BFF62208401D5002494D6 /* GoogleService-Info.plist */,
 				AA68FBE22058BEC400034F30 /* AppDelegate.swift */,
 				AA68FBE42058BEC400034F30 /* ViewController.swift */,
 				AAC62A60206B2E37000FCB82 /* SecondViewController.swift */,
-				AA68FBE62058BEC400034F30 /* Main.storyboard */,
 				AA68FBE92058BEC400034F30 /* Assets.xcassets */,
 				AA68FBEB2058BEC400034F30 /* LaunchScreen.storyboard */,
 				AA68FBEE2058BEC400034F30 /* Info.plist */,
 				AAD9993920648EFA0089CB73 /* FoodLab-Bridging-Header.h */,
+				D85BFF6420842705002494D6 /* RecipeCell.swift */,
 				AA8F3FC320858EE8006AF0C1 /* FoodLabHome.png */,
 			);
 			path = FoodLab;
@@ -305,7 +311,7 @@
 			files = (
 				AA8F3FC420858EE8006AF0C1 /* FoodLabHome.png in Resources */,
 				AA68FBED2058BEC400034F30 /* LaunchScreen.storyboard in Resources */,
-				AAD1E306206DB04B001C64E1 /* GoogleService-Info.plist in Resources */,
+				D85BFF63208401D5002494D6 /* GoogleService-Info.plist in Resources */,
 				AA68FBEA2058BEC400034F30 /* Assets.xcassets in Resources */,
 				AA68FBE82058BEC400034F30 /* Main.storyboard in Resources */,
 			);
@@ -372,6 +378,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoodLab/Pods-FoodLab-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -381,12 +388,12 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -396,7 +403,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,7 +523,9 @@
 			files = (
 				AAC62A61206B2E37000FCB82 /* SecondViewController.swift in Sources */,
 				AA68FBE52058BEC400034F30 /* ViewController.swift in Sources */,
+				D88313E220870A99007B3783 /* DetailViewController.swift in Sources */,
 				AA68FBE32058BEC400034F30 /* AppDelegate.swift in Sources */,
+				D85BFF6520842705002494D6 /* RecipeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -671,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -688,7 +696,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 966D857F3T;
 				INFOPLIST_FILE = FoodLab/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cisco.FoodLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -708,7 +716,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 966D857F3T;
 				INFOPLIST_FILE = FoodLab/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cisco.FoodLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
