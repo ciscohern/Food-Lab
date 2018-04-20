@@ -94,7 +94,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
         let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=\(ingred)"
         let headers: HTTPHeaders = [
-            "X-Mashape-Body":"&limitLicense=false&number=2&ranking=",
+            "X-Mashape-Body":"&limitLicense=false&number=5&ranking=",
             "X-Mashape-Key": retrievedString!,
             "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
             "accept": "application/json",
@@ -103,7 +103,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         //bounces call to background
         DispatchQueue.global(qos: .userInitiated).async {
             Alamofire.request(URL, headers: headers).responseJSON {(response) in
-                //debugPrint(response)
+                debugPrint(response)
                 let result = response.data
                 do{
                     self.recipies = try JSONDecoder().decode([Recipe].self, from: result!)
@@ -122,7 +122,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return recipies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -134,7 +134,6 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
             DispatchQueue.main.async {
                 cell?.recipieImageView.af_setImage(withURL: imageURL!)
             }
-           
         }
         
         //cell?.backgroundColor = UIColor.cyan

@@ -25,10 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             FirebaseApp.configure()
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
-        return true
     }
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject)-> Bool{
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any)-> Bool{
         
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url as URL!, sourceApplication: sourceApplication, annotation: annotation)

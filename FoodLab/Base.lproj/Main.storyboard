@@ -44,7 +44,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlY-XA-BZC">
                                 <rect key="frame" x="313" y="567" width="85" height="37"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-
                                 <color key="backgroundColor" red="0.80645138025283813" green="0.86286598443984985" blue="0.94959789514541626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +85,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="171"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc8-QM-Js8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc8-QM-Js8">
                                                     <rect key="frame" x="12" y="179" width="177" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -164,11 +163,11 @@
             <point key="canvasLocation" x="1841" y="116"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FoodLabHome.png" width="447" height="350"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7lS-BW-LcL"/>
         <segue reference="ig3-gc-a9s"/>
     </inferredMetricsTieBreakers>
-    <resources>
-        <image name="FoodLabHome.png" width="447" height="350"/>
-    </resources>
 </document>
