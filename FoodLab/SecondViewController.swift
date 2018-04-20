@@ -35,7 +35,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
-        
+
         //Display the FaceBook Login Buttons
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
@@ -80,6 +80,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         let splitIngredients = ingredients.components(separatedBy: ",")
         let joined = splitIngredients.joined(separator: ",")
         ingred = joined.components(separatedBy: .whitespaces).joined()
+
         APITest {
             self.set = true
             self.collectionView.reloadData()
@@ -115,6 +116,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
+
         }
         //collectionView.reloadData()
     }

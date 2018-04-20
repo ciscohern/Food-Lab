@@ -23,6 +23,7 @@ class ViewController: UIViewController, LoginButtonDelegate , GIDSignInUIDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
         loginButton.center = view.center
@@ -30,9 +31,17 @@ class ViewController: UIViewController, LoginButtonDelegate , GIDSignInUIDelegat
         view.addSubview(loginButton)
         
         
-        
-        
     }
+    
+    func handleFBSessionStateChangeWithNotification(notification: NSNotification) {
+        // Switch to MapViewController when logged in
+        if ((FBSDKAccessToken.current()) != nil) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         
