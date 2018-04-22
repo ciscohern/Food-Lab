@@ -28,6 +28,7 @@ struct Recipe: Decodable {
 
 class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionViewDataSource {
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     var recipies = [Recipe]()
     var set = false
@@ -43,14 +44,14 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         view.addSubview(loginButton)
         
         //initial call to preload collectionview
-        ingred = "apples"
-        APITest {
-            self.set = true //necessary to avoid out of index error
-            self.collectionView.reloadData()
-        }
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+//        ingred = "apples"
+//        APITest {
+//            self.set = true //necessary to avoid out of index error
+//            self.collectionView.reloadData()
+//        }
+//        DispatchQueue.main.async {
+//            self.collectionView.reloadData()
+//        }
         
     }
     
@@ -74,6 +75,13 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
     @IBOutlet weak var ingredientText: UITextField!
     var ingredients : String = ""
     var ingred: String = ""
+    
+    @IBAction func searchButton(_ sender: Any) {
+        
+    }
+    
+    
+    
     @IBAction func ingredientButton(_ sender: UIButton) {
         
         ingredients = ingredientText.text!
