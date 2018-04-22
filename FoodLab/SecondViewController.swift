@@ -26,7 +26,8 @@ struct Recipe: Decodable {
     let usedIngredientCount: Int
 }
 
-class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionViewDataSource {
+class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionViewDataSource, UISearchBarDelegate {
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     var recipies = [Recipe]()
@@ -43,14 +44,14 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         view.addSubview(loginButton)
         
         //initial call to preload collectionview
-        ingred = "apples"
-        APITest {
-            self.set = true //necessary to avoid out of index error
-            self.collectionView.reloadData()
-        }
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+//        ingred = "apples"
+//        APITest {
+//            self.set = true //necessary to avoid out of index error
+//            self.collectionView.reloadData()
+//        }
+//        DispatchQueue.main.async {
+//            self.collectionView.reloadData()
+//        }
         
     }
     
@@ -71,22 +72,41 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         
     }
     
-    @IBOutlet weak var ingredientText: UITextField!
     var ingredients : String = ""
     var ingred: String = ""
-    @IBAction func ingredientButton(_ sender: UIButton) {
+    
+    @IBAction func searchButton(_ sender: Any) {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        //Activity indicator
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
         
-        ingredients = ingredientText.text!
+        //Hide search bar
+        searchBar.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
+        
+        ingredients = searchBar.text!
         let splitIngredients = ingredients.components(separatedBy: ",")
         let joined = splitIngredients.joined(separator: ",")
         ingred = joined.components(separatedBy: .whitespaces).joined()
-
+        
         APITest {
             self.set = true
             self.collectionView.reloadData()
+            activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
         }
     }
-    
     
     //Food API JSON
     func APITest(callback: @escaping (() -> Void)) {
