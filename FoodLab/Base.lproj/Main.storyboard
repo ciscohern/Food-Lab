@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ctU-df-Cx3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YNa-BG-FnQ">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--init-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FoodLab" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,14 +25,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="init" id="qFp-KG-lRl"/>
                     <connections>
-                        <segue destination="Nt5-iF-WLJ" kind="show" identifier="loginSegue" id="lQM-YL-bGy"/>
+                        <segue destination="YNa-BG-FnQ" kind="show" identifier="loginSegue" id="lQM-YL-bGy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357.97101449275362" y="111.68478260869566"/>
+            <point key="canvasLocation" x="-222" y="116"/>
         </scene>
         <!--Home-->
         <scene sceneID="IhO-Ef-26i">
@@ -108,8 +107,8 @@
                         <viewLayoutGuide key="safeArea" id="jcN-w8-OGo"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Home" id="1fv-Tp-WE8">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="A7M-2J-unY"/>
+                    <navigationItem key="navigationItem" title="Home" id="snA-BW-Ztn">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="XFy-Qe-SNH"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -128,12 +127,12 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1877" y="112"/>
+            <point key="canvasLocation" x="1361" y="116"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Kpr-FD-P7q">
             <objects>
-                <viewController id="F6b-rc-W9T" customClass="DetailViewController" customModule="FoodLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="F6b-rc-W9T" customClass="DetailViewController" customModule="FoodLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JOb-c1-tCY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,7 +150,7 @@
                                 <state key="normal" title="back"/>
                                 <connections>
                                     <action selector="didTapBackButton:" destination="F6b-rc-W9T" eventType="touchUpInside" id="xMf-vc-H6c"/>
-                                    <segue destination="Nt5-iF-WLJ" kind="show" identifier="detailReturnMain" id="ig3-gc-a9s"/>
+                                    <segue destination="YNa-BG-FnQ" kind="show" identifier="detailReturnMain" id="ig3-gc-a9s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -164,50 +163,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSA-TU-Mnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="112"/>
+            <point key="canvasLocation" x="2147.826086956522" y="115.7608695652174"/>
         </scene>
-        <!--initial-->
-        <scene sceneID="cIe-eh-ulp">
+        <!--Navigation Controller-->
+        <scene sceneID="fD3-te-zGj">
             <objects>
-                <navigationController title="initial" automaticallyAdjustsScrollViewInsets="NO" id="ctU-df-Cx3" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YNa-BG-FnQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8E4-q2-egt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T6L-AP-GUj">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="P4f-vh-a9S"/>
+                        <segue destination="2fr-6U-pNe" kind="relationship" relationship="rootViewController" id="88W-0e-ou2"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NZh-8e-Sys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PuC-l0-486" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468" y="112"/>
-        </scene>
-        <!--home-->
-        <scene sceneID="sjP-CZ-EsB">
-            <objects>
-                <navigationController title="home" automaticallyAdjustsScrollViewInsets="NO" id="Nt5-iF-WLJ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xwn-mb-1EK">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2fr-6U-pNe" kind="relationship" relationship="rootViewController" id="D3R-7j-yPv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UAP-kK-z1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1099" y="112"/>
+            <point key="canvasLocation" x="561" y="116"/>
         </scene>
     </scenes>
     <resources>
         <image name="FoodLabHome.png" width="447" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7lS-BW-LcL"/>
-        <segue reference="ig3-gc-a9s"/>
+        <segue reference="lQM-YL-bGy"/>
     </inferredMetricsTieBreakers>
 </document>
