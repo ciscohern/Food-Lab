@@ -41,30 +41,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlY-XA-BZC">
-                                <rect key="frame" x="313" y="567" width="85" height="37"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <color key="backgroundColor" red="0.80645138025283813" green="0.86286598443984985" blue="0.94959789514541626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Enter"/>
-                                <connections>
-                                    <action selector="ingredientButton:" destination="2fr-6U-pNe" eventType="touchUpInside" id="64D-A5-34N"/>
-                                    <action selector="ingredientButton:" destination="2fr-6U-pNe" eventType="touchDragInside" id="sUA-E9-c5f"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="Type a comma-separated list of ingredients" adjustsFontForContentSizeCategory="YES" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="t8t-cC-KuJ">
-                                <rect key="frame" x="27" y="567" width="287" height="37"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="ingredientsText:" destination="2fr-6U-pNe" eventType="editingDidEnd" id="e8N-cX-XWO"/>
-                                </connections>
-                            </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F62-aZ-OtG">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="566"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XtD-c0-Cd2">
@@ -108,12 +86,15 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Home" id="snA-BW-Ztn">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="XFy-Qe-SNH"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="XFy-Qe-SNH">
+                            <connections>
+                                <action selector="searchButton:" destination="2fr-6U-pNe" id="mha-1V-tqt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="F62-aZ-OtG" id="1Uq-0X-98i"/>
-                        <outlet property="ingredientText" destination="t8t-cC-KuJ" id="pTK-Hj-WJx"/>
                         <outlet property="searchDisplayController" destination="Nkm-rw-K37" id="CQl-Xg-v3k"/>
                     </connections>
                 </viewController>
@@ -127,7 +108,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1361" y="116"/>
+            <point key="canvasLocation" x="1360.8695652173915" y="115.7608695652174"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Kpr-FD-P7q">
@@ -136,30 +117,9 @@
                     <view key="view" contentMode="scaleToFill" id="JOb-c1-tCY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test!" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7m9-S9-sFe">
-                                <rect key="frame" x="121" y="205" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STn-Zb-9Tb">
-                                <rect key="frame" x="152" y="550" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back"/>
-                                <connections>
-                                    <action selector="didTapBackButton:" destination="F6b-rc-W9T" eventType="touchUpInside" id="xMf-vc-H6c"/>
-                                    <segue destination="YNa-BG-FnQ" kind="show" identifier="detailReturnMain" id="ig3-gc-a9s"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="K4F-zD-ZJ2"/>
                     </view>
-                    <connections>
-                        <outlet property="backbutton" destination="STn-Zb-9Tb" id="WwF-rj-HL7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSA-TU-Mnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,7 +147,4 @@
     <resources>
         <image name="FoodLabHome.png" width="447" height="350"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="lQM-YL-bGy"/>
-    </inferredMetricsTieBreakers>
 </document>
