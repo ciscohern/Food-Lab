@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DetailViewController: UIViewController {
-    @IBOutlet weak var backbutton: UIButton!
+    
+    
+    @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    
+    var rImage = ""
+    var rTitle = ""
+    //var rId : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //let myString = String(rId)
 
+        let URLimage = URL(string: rImage)
+        self.recipeImage.af_setImage(withURL: URLimage!)
+        self.titleLabel.text! = rTitle
+        //self.idLabel.text! = myString
+        //self.recipeImage.image = rImage
         // Do any additional setup after loading the view.
     }
 

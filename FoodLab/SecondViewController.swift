@@ -26,7 +26,7 @@ struct Recipe: Decodable {
     let usedIngredientCount: Int
 }
 
-class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionViewDataSource, UISearchBarDelegate {
+class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -36,7 +36,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
-
+        collectionView.delegate = self
         //Display the FaceBook Login Buttons
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
@@ -159,4 +159,35 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         //cell?.backgroundColor = UIColor.cyan
         return cell!
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(sender != nil){
+//            let cell = sender as! UICollectionViewCell
+//            if let indexPath = collectionView.indexPath(for: cell){
+//                let recipe = recipies[indexPath.row]
+//                let detailViewController = segue.destination as! DetailViewController
+//                detailViewController.recipe = recipe
+//
+//                let recipeCell = sender as! RecipeCell
+//                //detailViewdetailViewController.
+//            }
+//
+//
+//
+//}
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let desVC = mainStoryboard.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
+        desVC.rImage = recipies[indexPath.row].image
+        desVC.rTitle = recipies[indexPath.row].title
+        //desVC.rId = recipies[indexPath.row].id as String
+        self.navigationController?.pushViewController(desVC, animated: true)
+    }
+    
 }
+
+
+

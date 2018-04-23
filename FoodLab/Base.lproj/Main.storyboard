@@ -75,7 +75,6 @@
                                         <connections>
                                             <outlet property="recipeTitle" destination="Yc8-QM-Js8" id="GTG-6O-tu9"/>
                                             <outlet property="recipieImageView" destination="K7S-w9-lKL" id="DEh-yx-dQR"/>
-                                            <segue destination="F6b-rc-W9T" kind="show" id="7lS-BW-LcL"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -113,13 +112,38 @@
         <!--Detail View Controller-->
         <scene sceneID="Kpr-FD-P7q">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="F6b-rc-W9T" customClass="DetailViewController" customModule="FoodLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F6b-rc-W9T" customClass="DetailViewController" customModule="FoodLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JOb-c1-tCY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-bE-ekl">
+                                <rect key="frame" x="43" y="599" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zR-6b-dqk">
+                                <rect key="frame" x="43" y="672" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yso-Lm-MFw">
+                                <rect key="frame" x="20" y="0.0" width="374" height="285"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="K4F-zD-ZJ2"/>
                     </view>
+                    <connections>
+                        <outlet property="idLabel" destination="1zR-6b-dqk" id="fUs-Sw-qWq"/>
+                        <outlet property="recipeImage" destination="Yso-Lm-MFw" id="ESA-Np-uLd"/>
+                        <outlet property="titleLabel" destination="YSu-bE-ekl" id="EDd-R7-0Wm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSA-TU-Mnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
