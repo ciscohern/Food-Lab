@@ -119,7 +119,8 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
             "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
             "accept": "application/json",
             ]
-        
+        print(URL, headers)
+
         //bounces call to background
         DispatchQueue.global(qos: .userInitiated).async {
             Alamofire.request(URL, headers: headers).responseJSON {(response) in

@@ -52,20 +52,22 @@ class DetailViewController: UIViewController {
 
         
         let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
-        let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/\(rId)"
+        let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/\(rId)/information"
         
         let headers: HTTPHeaders=[
             "X-Mashape-Body":"/information?includeNutrition=false",
             "X-Mashape-Key":retrievedString!,
+            "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
             "accept": "application/json",
             ]
+        print(URL, headers)
         Alamofire.request(URL, headers: headers).responseJSON { response in
             debugPrint(response)
             
             switch response.result{
             case .success(let value):
                 let json = JSON(value)
-                //print (json)
+                print (json)
             case .failure(let error):
                 print(error)
             }
