@@ -8,6 +8,11 @@
 
 import UIKit
 import AlamofireImage
+import SwiftKeychainWrapper
+import Alamofire
+import SwiftyJSON
+import Foundation
+
 
 class DetailViewController: UIViewController {
     
@@ -18,16 +23,16 @@ class DetailViewController: UIViewController {
     
     var rImage = ""
     var rTitle = ""
-    //var rId : Int = 0
+    var rId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let myString = String(rId)
+        RecipeInfo()
 
         let URLimage = URL(string: rImage)
         self.recipeImage.af_setImage(withURL: URLimage!)
         self.titleLabel.text! = rTitle
-        //self.idLabel.text! = myString
+        self.idLabel.text! = rId
         //self.recipeImage.image = rImage
         // Do any additional setup after loading the view.
     }
@@ -40,6 +45,31 @@ class DetailViewController: UIViewController {
     @IBAction func didTapBackButton(_ sender: Any) {
         performSegue(withIdentifier: "detailReturnMain", sender: (Any).self)
 
+    }
+    
+    func RecipeInfo(){
+       // let RecipeID = rId
+
+        
+        let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
+        let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/\(rId)"
+        
+        let headers: HTTPHeaders=[
+            "X-Mashape-Body":"/information?includeNutrition=false",
+            "X-Mashape-Key":retrievedString!,
+            "accept": "application/json",
+            ]
+        Alamofire.request(URL, headers: headers).responseJSON { response in
+            debugPrint(response)
+            
+            switch response.result{
+            case .success(let value):
+                let json = JSON(value)
+                //print (json)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     /*

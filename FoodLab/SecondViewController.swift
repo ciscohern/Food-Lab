@@ -183,7 +183,8 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         let desVC = mainStoryboard.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
         desVC.rImage = recipies[indexPath.row].image
         desVC.rTitle = recipies[indexPath.row].title
-        //desVC.rId = recipies[indexPath.row].id as String
+        let s = String(recipies[indexPath.row].id)
+        desVC.rId = s
         self.navigationController?.pushViewController(desVC, animated: true)
     }
     
