@@ -37,11 +37,25 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        //set collectionview layout
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = layout.minimumInteritemSpacing
+        let cellsPerLine: CGFloat = 2
+        let interItemSpacingTotal = layout.minimumInteritemSpacing * (cellsPerLine - 1)
+        let width = collectionView.frame.size.width / cellsPerLine - interItemSpacingTotal / cellsPerLine
+        layout.itemSize = CGSize(width: width, height: width * 3 / 4)
+        
+        
+        
         //Display the FaceBook Login Buttons
         let loginButton = LoginButton(readPermissions: [ .publicProfile])
         loginButton.delegate = self
         loginButton.frame = CGRect(x:100,y:650,width:200,height:28)
         view.addSubview(loginButton)
+        
+        
         
         //initial call to preload collectionview
 //        ingred = "apples"
@@ -153,30 +167,13 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
             let imageURL = URL(string: recipies[indexPath.row].image)
             cell?.recipeTitle.text = recipies[indexPath.row].title
             DispatchQueue.main.async {
-                cell?.recipieImageView.af_setImage(withURL: imageURL!)
+                cell!.recipieImageView.af_setImage(withURL: imageURL!)
             }
         }
         
         //cell?.backgroundColor = UIColor.cyan
         return cell!
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if(sender != nil){
-//            let cell = sender as! UICollectionViewCell
-//            if let indexPath = collectionView.indexPath(for: cell){
-//                let recipe = recipies[indexPath.row]
-//                let detailViewController = segue.destination as! DetailViewController
-//                detailViewController.recipe = recipe
-//
-//                let recipeCell = sender as! RecipeCell
-//                //detailViewdetailViewController.
-//            }
-//
-//
-//
-//}
-//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
