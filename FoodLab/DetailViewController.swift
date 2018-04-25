@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var instructionsText: UITextView!
     
     var rImage = ""
     var rTitle = ""
@@ -95,6 +96,7 @@ class DetailViewController: UIViewController {
                 do{
                     let recipeData = try JSONDecoder().decode(details.self, from: result!)
                     print(recipeData.instructions)
+                    self.instructionsText.text = recipeData.instructions
                     //return     callback()
                 }catch{
                     print("error")
