@@ -25,6 +25,15 @@ class DetailViewController: UIViewController {
     var rTitle = ""
     var rId = ""
     
+    struct details: Codable {
+        let instructions: String?
+        
+        private enum CodingKeys: String, CodingKey{
+            case instructions
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         RecipeInfo()
@@ -47,11 +56,28 @@ class DetailViewController: UIViewController {
 
     }
     
+//    guard let gitUrl = URL(string: "https://api.github.com/users/shashikant86") else { return }
+//    URLSession.shared.dataTask(with: gitUrl) { (data, response
+//    , error) in
+//    guard let data = data else { return }
+//    do {
+//    let decoder = JSONDecoder()
+//    let gitData = try decoder.decode(MyGitHub.self, from: data)
+//    print(gitData.name)
+//
+//    } catch let err {
+//    print("Err", err)
+//    }
+//    }.resume()
+    
+    
+    
     func RecipeInfo(){
        // let RecipeID = rId
 
         
         let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
+        
         let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/\(rId)/information"
         
         let headers: HTTPHeaders=[
@@ -61,19 +87,27 @@ class DetailViewController: UIViewController {
             "accept": "application/json",
             ]
         print(URL, headers)
-        Alamofire.request(URL, headers: headers).responseJSON { response in
-            debugPrint(response)
-            
-            switch response.result{
-            case .success(let value):
-                let json = JSON(value)
-                print (json)
-            case .failure(let error):
-                print(error)
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            Alamofire.request(URL, headers: headers).responseJSON {(response) in
+                debugPrint(response)
+                let result = response.data
+                do{
+                    let recipeData = try JSONDecoder().decode(details.self, from: result!)
+                    print(recipeData.instructions)
+                    //return     callback()
+                }catch{
+                    print("error")
+                }
+            }
+            //brings it back, refreshes UI
+            DispatchQueue.main.async {
+                //self.collectionView.reloadData()
             }
         }
     }
-    
+//    let recipeData = try decoder.decode(details.self, from: json)
+//    print(recipeData.instructions)
     /*
     // MARK: - Navigation
 
