@@ -2,11 +2,7 @@
 
 **FoodLab** is an iOS app utilizing the [Spoonacular API](https://market.mashape.com/spoonacular/recipe-food-nutrition) to allow users to find recipes based on the ingredients they wish to use
 
-Contributors:
-Francisco Hernandez
-Joseph Antongiovanni
-Lesley Amezcua
-Logan Louks
+Contributors: Francisco Hernandez, Joseph Antongiovanni, Lesley Amezcua, Logan Louks
 
 ## User Stories
 
@@ -16,7 +12,7 @@ Logan Louks
 - [x] User can search using multiple ingredients
 - [x] User sees a collection view of recipe results
 - [x] User can see a detail view of recipe results
-- [ ] Detail view contains ingredient list and cooking instructions
+- [x] Detail view contains ingredient list and cooking instructions
 
 
 ## Video Walkthrough:
@@ -24,6 +20,11 @@ Logan Louks
 Here's a walkthrough of our currently implemented user stories
 
 <img src='https://i.imgur.com/rewxSiQ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+In development recipe details screen
+
+<img src='https://i.imgur.com/Ba54khl.png' title='Detail View' width='' alt='Detail View' />
+
 
 # How To Use Food Lab:
 
@@ -51,18 +52,18 @@ Food-Lab solves that problem by having users type in specific ingredients and th
 
 The technologies used in the application 'Food Lab' are:
 
-- XCode (iOS): Xcode is an IDE produced by Apple for developing macOS, iOS, and TVOS. We wanted to challenge ourselves as the majority of our group has limited experience with iOS programming. Xcode will be used for both the front-end and back-end of developing FoodLab.
+- [XCode (iOS)](https://developer.apple.com/xcode/): Xcode is an IDE produced by Apple for developing macOS, iOS, and TVOS. We wanted to challenge ourselves as the majority of our group has limited experience with iOS programming. Xcode will be used for both the front-end and back-end of developing FoodLab.
 
-- FireBase (Database): Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. When you build cross-platform apps with our iOS, Android, and JavaScript SDKs, all of your clients share one Realtime Database instance and automatically receive updates with the newest data.
+- [FireBase (Database)](https://firebase.google.com/): Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. When you build cross-platform apps with our iOS, Android, and JavaScript SDKs, all of your clients share one Realtime Database instance and automatically receive updates with the newest data.
 
 - [FaceBook (API)](https://developers.facebook.com/docs/) : Facebook login will be used for the user login feature within the “Food Lab” application. Users will be able to create a login by incorporating the users information from Facebook.
 
-- Google (API): A long with FaceBook, Google login will be used for the user login feature within the “Food Lab” application. Users will be able to create a login by incorporating the users information from Google. 
+- [Google (API)](https://developers.google.com/identity/): A long with FaceBook, Google login will be used for the user login feature within the “Food Lab” application. Users will be able to create a login by incorporating the users information from Google. 
 
 - [Spoonacular Recipe (API)](https://spoonacular.com/food-api/docs/find-recipes-by-ingredients
 ): Spoonacular lets you find recipes that either maximize the usage of ingredients you have at hand (pre shopping) or minimize the ingredients that you don't currently have (post shopping).
 
-- GitHub: GitHub brings together the world's largest community of developers to discover, share, and build better software. From open source projects to private team repositories, we're your all-in-one platform for collaborative development.
+- [GitHub](https://github.com/): GitHub brings together the world's largest community of developers to discover, share, and build better software. From open source projects to private team repositories, we're your all-in-one platform for collaborative development.
 
 
 ## Features:
@@ -79,16 +80,18 @@ https://github.com/ciscohern/Food-Lab
 
 ## License
 
-Copyright [2018] [Francisco Hernandez, Joseph Antongiovanni, Lesley Amezcua, Logan Louks]
+    Copyright [2018] [Francisco Hernandez, Joseph Antongiovanni, Lesley Amezcua, Logan Louks]
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+    http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+---
