@@ -11,7 +11,7 @@
 		7158739ED95F6F8F2265AF86 /* Pods_FoodLabUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C57458C98D1E04BC8DDA1B6 /* Pods_FoodLabUITests.framework */; };
 		7395A8772092357E0007A130 /* FoodLabHome.png in Resources */ = {isa = PBXBuildFile; fileRef = 7395A8762092357E0007A130 /* FoodLabHome.png */; };
 		7395A879209235A60007A130 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7395A878209235A60007A130 /* GoogleService-Info.plist */; };
-		73CBF0132092A7A000A88624 /* 2018-04-12 (3).png in Resources */ = {isa = PBXBuildFile; fileRef = 73CBF0122092A79F00A88624 /* 2018-04-12 (3).png */; };
+		73CBF0132092A7A000A88624 /* FoodLabLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 73CBF0122092A79F00A88624 /* FoodLabLogo.png */; };
 		A0F96AC3B26183388586CCA8 /* Pods_FoodLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75ECFEC7C6F01ACBC82EA557 /* Pods_FoodLab.framework */; };
 		AA3644962059E34200E960E7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3644972059E34200E960E7 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		AA68FBE32058BEC400034F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68FBE22058BEC400034F30 /* AppDelegate.swift */; };
@@ -51,7 +51,7 @@
 		6F138FC5C45975D4AF9D31A8 /* Pods-FoodLabTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLabTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodLabTests/Pods-FoodLabTests.release.xcconfig"; sourceTree = "<group>"; };
 		7395A8762092357E0007A130 /* FoodLabHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FoodLabHome.png; path = ../../../../Downloads/FoodLabHome.png; sourceTree = "<group>"; };
 		7395A878209235A60007A130 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/maps-sdk-for-ios-samples-master/tutorials/my-places/my-places/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		73CBF0122092A79F00A88624 /* 2018-04-12 (3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "2018-04-12 (3).png"; path = "../../../../Downloads/2018-04-12 (3).png"; sourceTree = "<group>"; };
+		73CBF0122092A79F00A88624 /* FoodLabLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FoodLabLogo.png; path = ../../../../Downloads/FoodLabLogo.png; sourceTree = "<group>"; };
 		75ECFEC7C6F01ACBC82EA557 /* Pods_FoodLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3644972059E34200E960E7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA66F948205B4FC900A65DB5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -167,7 +167,7 @@
 				AA68FBE22058BEC400034F30 /* AppDelegate.swift */,
 				AA68FBE42058BEC400034F30 /* ViewController.swift */,
 				AA68FBE92058BEC400034F30 /* Assets.xcassets */,
-				73CBF0122092A79F00A88624 /* 2018-04-12 (3).png */,
+				73CBF0122092A79F00A88624 /* FoodLabLogo.png */,
 				AA68FBEB2058BEC400034F30 /* LaunchScreen.storyboard */,
 				AA68FBEE2058BEC400034F30 /* Info.plist */,
 				AAD9993920648EFA0089CB73 /* FoodLab-Bridging-Header.h */,
@@ -311,7 +311,7 @@
 				7395A8772092357E0007A130 /* FoodLabHome.png in Resources */,
 				AA68FBED2058BEC400034F30 /* LaunchScreen.storyboard in Resources */,
 				AA68FBEA2058BEC400034F30 /* Assets.xcassets in Resources */,
-				73CBF0132092A7A000A88624 /* 2018-04-12 (3).png in Resources */,
+				73CBF0132092A7A000A88624 /* FoodLabLogo.png in Resources */,
 				AA68FBE82058BEC400034F30 /* Main.storyboard in Resources */,
 				7395A879209235A60007A130 /* GoogleService-Info.plist in Resources */,
 			);
