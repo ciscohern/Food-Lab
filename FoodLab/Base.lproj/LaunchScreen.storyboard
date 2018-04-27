@@ -17,21 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="FoodLabHome.png" translatesAutoresizingMaskIntoConstraints="NO" id="02w-cf-YQm">
-                                <rect key="frame" x="-36" y="158" width="447" height="350"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="2018-04-12 (3).png" translatesAutoresizingMaskIntoConstraints="NO" id="02w-cf-YQm">
+                                <rect key="frame" x="0.0" y="158" width="375" height="350"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="02w-cf-YQm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5JP-N0-yMo"/>
+                            <constraint firstItem="02w-cf-YQm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A75-wB-FZh"/>
+                            <constraint firstItem="02w-cf-YQm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="138" id="QgJ-OY-sNN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="02w-cf-YQm" secondAttribute="bottom" constant="159" id="iMm-SQ-2TF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="FoodLabHome.png" width="447" height="350"/>
+        <image name="2018-04-12 (3).png" width="447" height="350"/>
     </resources>
 </document>
