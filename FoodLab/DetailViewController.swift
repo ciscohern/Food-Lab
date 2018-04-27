@@ -50,6 +50,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         RecipeInfo()
 
         let URLimage = URL(string: rImage)
