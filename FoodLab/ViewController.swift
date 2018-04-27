@@ -60,9 +60,7 @@ class ViewController: UIViewController, LoginButtonDelegate , GIDSignInUIDelegat
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         print("login success")
         
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
-        self.present(vc, animated: true, completion: nil)
+       performSegue(withIdentifier: "loginSegue", sender: self)
         
         
     }
