@@ -128,8 +128,9 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
         let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=\(ingred)"
         let headers: HTTPHeaders = [
-            "X-Mashape-Body":"&limitLicense=false&number=5&ranking=",
-            "X-Mashape-Key": retrievedString!,
+            "X-Mashape-Body":"&limitLicense=false&number=6&ranking=",
+            //"X-Mashape-Key": retrievedString!,
+            "X-Mashape-Key": "kLlqNDUDl5msh1Pju39aNJohX87mp1izGfDjsnCFHkHX1aOtyw",
             "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
             "accept": "application/json",
             ]
