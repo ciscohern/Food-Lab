@@ -76,8 +76,7 @@ class DetailViewController: UIViewController {
         
         let headers: HTTPHeaders=[
             "X-Mashape-Body":"/information?includeNutrition=false",
-            //"X-Mashape-Key":retrievedString!,
-            "X-Mashape-Key": "kLlqNDUDl5msh1Pju39aNJohX87mp1izGfDjsnCFHkHX1aOtyw",
+            "X-Mashape-Key":retrievedString!,
             "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
             "accept": "application/json",
             ]
