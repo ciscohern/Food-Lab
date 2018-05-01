@@ -20,11 +20,21 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var instructionsText: UITextView!
     @IBOutlet weak var servingsLabel: UILabel!
     @IBOutlet weak var readyInLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var segmentCont: UISegmentedControl!
+    
+    @IBOutlet weak var instructionsText: UITextView!
+    
+    @IBOutlet weak var vegetarianLabel: UILabel!
+    @IBOutlet weak var veganLabel: UILabel!
+    @IBOutlet weak var glutenLabel: UILabel!
+    @IBOutlet weak var healthLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    
     
     var rImage = ""
     var rTitle = ""
@@ -37,6 +47,11 @@ class DetailViewController: UIViewController {
         let servings:Int
         let spoonacularScore: Int
         let readyInMinutes: Int
+        let vegan: Int
+        let vegetarian: Int
+        let weightWatcherSmartPoints: Int
+        let glutenFree: Int
+        let healthScore: Int
         
         private enum CodingKeys: String, CodingKey{
             case aggregateLikes
@@ -44,6 +59,11 @@ class DetailViewController: UIViewController {
             case servings
             case spoonacularScore
             case readyInMinutes
+            case vegan
+            case vegetarian
+            case weightWatcherSmartPoints
+            case glutenFree
+            case healthScore
         }
     }
     
@@ -51,12 +71,19 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        RecipeInfo()
+        DispatchQueue.global(qos: .background).async {
+            self.RecipeInfo()
+        }
 
-        let URLimage = URL(string: rImage)
+        DispatchQueue.main.async {
+
+            let URLimage = URL(string: self.rImage)
         self.recipeImage.af_setImage(withURL: URLimage!)
-        self.titleLabel.text! = rTitle
-        self.idLabel.text! = "ID: " + rId
+            self.titleLabel.text! = self.rTitle
+            self.idLabel.text! = "ID: " + self.rId
+        
+        self.segmentCont.selectedSegmentIndex = 0
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,7 +109,7 @@ class DetailViewController: UIViewController {
             ]
         print(URL, headers)
 
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .default).async {
             Alamofire.request(URL, headers: headers).responseJSON {(response) in
                 debugPrint(response)
                 let result = response.data
@@ -101,23 +128,44 @@ class DetailViewController: UIViewController {
                     print("error")
                 }
             }
-            //brings it back, refreshes UI
-            DispatchQueue.main.async {
-                //self.instructionsText.text = recipeData.instructions
-                
-            }
         }
     }
-//    let recipeData = try decoder.decode(details.self, from: json)
-//    print(recipeData.instructions)
-    /*
-    // MARK: - Navigation
+
+    
+    @IBAction func segmentTap(_ sender: Any) {
+        let getIndex = segmentCont.selectedSegmentIndex
+        
+        print(getIndex)
+
+        switch (getIndex) {
+        case 0:
+            self.instructionsText.isHidden = false
+            self.vegetarianLabel.isHidden = true
+            self.veganLabel.isHidden = true
+            self.glutenLabel.isHidden = true
+            self.healthLabel.isHidden = true
+            self.weightLabel.isHidden = true
+        case 1:
+            self.instructionsText.isHidden = true
+            self.vegetarianLabel.isHidden = false
+            self.veganLabel.isHidden = false
+            self.glutenLabel.isHidden = false
+            self.healthLabel.isHidden = false
+            self.weightLabel.isHidden = false
+        case 2:
+            self.instructionsText.isHidden = true
+        default:
+            print("nothing Selected")
+        }
+    }
+    
+    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
