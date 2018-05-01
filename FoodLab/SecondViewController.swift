@@ -113,12 +113,14 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         let splitIngredients = ingredients.components(separatedBy: ",")
         let joined = splitIngredients.joined(separator: ",")
         ingred = joined.components(separatedBy: .whitespaces).joined()
-        
-        APITest {
+        DispatchQueue.global(qos: .default).async {
+
+        self.APITest {
             self.set = true
             self.collectionView.reloadData()
             activityIndicator.stopAnimating()
             UIApplication.shared.endIgnoringInteractionEvents()
+        }
         }
     }
     
@@ -166,7 +168,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         if(self.set == true){
             let imageURL = URL(string: recipies[indexPath.row].image)
             cell?.recipeTitle.text = recipies[indexPath.row].title
-            DispatchQueue.main.async {
+            DispatchQueue.global(qos: .background).async {
                 cell!.recipieImageView.af_setImage(withURL: imageURL!)
             }
         }
