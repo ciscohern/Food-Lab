@@ -92,6 +92,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
     @IBAction func searchButton(_ sender: Any) {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search by Ingredients"
         present(searchController, animated: true, completion: nil)
     }
     
@@ -130,7 +131,7 @@ class SecondViewController: UIViewController, LoginButtonDelegate, UICollectionV
         let retrievedString: String? = KeychainWrapper.standard.string(forKey: "SpoonacularApi")
         let URL:String = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=\(ingred)"
         let headers: HTTPHeaders = [
-            "X-Mashape-Body":"&limitLicense=false&number=6&ranking=",
+            "X-Mashape-Body":"&limitLicense=false&number=5&ranking=",
             "X-Mashape-Key": retrievedString!,
             "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com",
             "accept": "application/json",
