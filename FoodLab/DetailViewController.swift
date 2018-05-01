@@ -118,11 +118,22 @@ class DetailViewController: UIViewController {
                     //print(recipeData.instructions)
                     //self.instructionsText.text = recipeData.instructions
                     DispatchQueue.main.async {
-                        self.instructionsText.text = recipeData.instructions!
+                        self.instructionsText.text = recipeData.instructions
                         self.servingsLabel.text = "Servings: " + String(recipeData.servings)
                         self.readyInLabel.text = "Ready in: " + String(recipeData.readyInMinutes) + " minutes"
                         self.likesLabel.text = String(recipeData.aggregateLikes) + " Likes"
                         self.scoreLabel.text = "Score: " + String(recipeData.spoonacularScore)
+                        let vegetBool = Bool(truncating: recipeData.vegetarian as NSNumber)
+                        self.vegetarianLabel.text = (vegetBool ? "Vegetarian" : "Not Vegetarian")
+                        let veganBool = Bool(truncating: recipeData.vegan as NSNumber)
+                        self.veganLabel.text = (veganBool ? "Vegan" : "Not Vegan")
+                        let glutenBool = Bool(truncating: recipeData.glutenFree as NSNumber)
+                        self.glutenLabel.text = (glutenBool ? "Gluten Free" : "Not Gluten Free")
+                    
+                        self.healthLabel.text = "Health Score: " + String(recipeData.healthScore)
+                        
+                        self.weightLabel.text = "Weight Watcher Score: " + String(recipeData.weightWatcherSmartPoints)
+                        
                     }
                 }catch{
                     print("error")
