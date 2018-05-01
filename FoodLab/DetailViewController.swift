@@ -35,13 +35,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var healthLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     
+    @IBOutlet weak var wineText: UITextView!
     
     var rImage = ""
     var rTitle = ""
     var rId = ""
     
     
-    struct details: Codable {
+    struct details: Decodable {
         let aggregateLikes: Int
         let instructions: String?
         let servings:Int
@@ -52,19 +53,29 @@ class DetailViewController: UIViewController {
         let weightWatcherSmartPoints: Int
         let glutenFree: Int
         let healthScore: Int
+        var winePairing: Wine
         
-        private enum CodingKeys: String, CodingKey{
-            case aggregateLikes
-            case instructions
-            case servings
-            case spoonacularScore
-            case readyInMinutes
-            case vegan
-            case vegetarian
-            case weightWatcherSmartPoints
-            case glutenFree
-            case healthScore
-        }
+//        private enum CodingKeys: String, CodingKey{
+//            case aggregateLikes
+//            case instructions
+//            case servings
+//            case spoonacularScore
+//            case readyInMinutes
+//            case vegan
+//            case vegetarian
+//            case weightWatcherSmartPoints
+//            case glutenFree
+//            case healthScore
+//            case wine
+//        }
+    }
+    
+    struct Wine: Decodable{
+        let pairingText: String
+        
+//        private enum CodingKeys: String, CodingKey{
+//            case pairingText
+//        }
     }
     
     
@@ -82,7 +93,6 @@ class DetailViewController: UIViewController {
             self.titleLabel.text! = self.rTitle
             self.idLabel.text! = "ID: " + self.rId
         
-        self.segmentCont.selectedSegmentIndex = 0
         }
     }
 
@@ -133,6 +143,8 @@ class DetailViewController: UIViewController {
                         self.healthLabel.text = "Health Score: " + String(recipeData.healthScore)
                         
                         self.weightLabel.text = "Weight Watcher Score: " + String(recipeData.weightWatcherSmartPoints)
+                        print("PAIRING TEXT")
+                        self.wineText.text = recipeData.winePairing.pairingText
                         
                     }
                 }catch{
@@ -151,20 +163,35 @@ class DetailViewController: UIViewController {
         switch (getIndex) {
         case 0:
             self.instructionsText.isHidden = false
+            
             self.vegetarianLabel.isHidden = true
             self.veganLabel.isHidden = true
             self.glutenLabel.isHidden = true
             self.healthLabel.isHidden = true
             self.weightLabel.isHidden = true
+            
+            self.wineText.isHidden = true
         case 1:
             self.instructionsText.isHidden = true
+            
             self.vegetarianLabel.isHidden = false
             self.veganLabel.isHidden = false
             self.glutenLabel.isHidden = false
             self.healthLabel.isHidden = false
             self.weightLabel.isHidden = false
+            
+            self.wineText.isHidden = true
+
         case 2:
             self.instructionsText.isHidden = true
+            
+            self.vegetarianLabel.isHidden = true
+            self.veganLabel.isHidden = true
+            self.glutenLabel.isHidden = true
+            self.healthLabel.isHidden = true
+            self.weightLabel.isHidden = true
+            
+            self.wineText.isHidden = false
         default:
             print("nothing Selected")
         }

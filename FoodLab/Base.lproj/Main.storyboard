@@ -187,13 +187,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yso-Lm-MFw">
                                 <rect key="frame" x="0.0" y="30" width="414" height="285"/>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DWD-2k-5qT">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="DWD-2k-5qT">
                                 <rect key="frame" x="20" y="452" width="374" height="29"/>
                                 <segments>
                                     <segment title="Recipe"/>
                                     <segment title="Health"/>
                                     <segment title="Wine"/>
                                 </segments>
+                                <color key="tintColor" red="0.89584296941757202" green="0.8277166485786438" blue="0.90197664499282837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segmentTap:" destination="F6b-rc-W9T" eventType="valueChanged" id="gej-eV-LbQ"/>
                                 </connections>
@@ -233,6 +234,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vvt-Wt-xtx">
+                                <rect key="frame" x="0.0" y="503" width="414" height="233"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.97874265909194946" blue="0.91335409879684448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.99960750341415405" green="0.98111647367477417" blue="0.91534096002578735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -288,6 +296,7 @@
                         <outlet property="veganLabel" destination="PXT-DI-q0V" id="1MU-QZ-5Lg"/>
                         <outlet property="vegetarianLabel" destination="iGw-sF-CgZ" id="BjO-Cw-oGt"/>
                         <outlet property="weightLabel" destination="LpW-iZ-Dg0" id="2Jx-rY-PyG"/>
+                        <outlet property="wineText" destination="Vvt-Wt-xtx" id="BcK-0s-Gdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSA-TU-Mnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
