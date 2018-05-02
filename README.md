@@ -7,23 +7,20 @@ Contributors: Francisco Hernandez, Joseph Antongiovanni, Lesley Amezcua, Logan L
 ## User Stories
 
 - [x] User can login using Facebook
-- [ ] User can login using Google
 - [x] User can search for recipes by ingredient 
 - [x] User can search using multiple ingredients
-- [x] User sees a collection view of recipe results
+- [x] User sees a collection view of recipe results with and image and title
 - [x] User can see a detail view of recipe results
-- [x] Detail view contains ingredient list and cooking instructions
+- [x] Detail view contains recipe cooking instructions, health information, and wine pairings
+
 
 
 ## Video Walkthrough:
 
 Here's a walkthrough of our currently implemented user stories
 
-<img src='https://i.imgur.com/rewxSiQ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/8J9kLhW.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-In development recipe details screen
-
-<img src='https://i.imgur.com/Ba54khl.png' title='Detail View' width='' alt='Detail View' />
 
 
 # How To Use Food Lab:
@@ -93,5 +90,6 @@ https://github.com/ciscohern/Food-Lab
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
 
 ---
