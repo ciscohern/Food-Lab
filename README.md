@@ -75,6 +75,9 @@ The three API's that the application 'Food Lab' uses are Spoonacular, FaceBook, 
 ## GitHub Link:
 https://github.com/ciscohern/Food-Lab
 
+## Google Presentation:
+https://docs.google.com/presentation/d/1_gmHBinL2uVNvX-a80RxkZ1Pwmls3ovJW8HQTxjLx3s/edit?usp=sharing
+
 ## License
 
     Copyright [2018] [Francisco Hernandez, Joseph Antongiovanni, Lesley Amezcua, Logan Louks]
